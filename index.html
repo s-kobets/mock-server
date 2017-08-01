@@ -1,0 +1,19 @@
+<!Doctype>
+<html>
+    <head>
+        <title>nodejs-form</title>
+    </head>
+    <body>
+        <form action="/register" method="post" id="myForm">
+            <label>ФИО</label><br>
+            <input type="text" name="fio"/><br><br>
+            <label>Почта</label><br>
+            <input type="text" name="email" /><br><br>
+            <label>Телефон</label><br>
+            <input type="number" name="phone" /><br><br>
+            <input id="submitButton" type="submit" value="Отправить" />
+        </form>
+
+        <div id="resultContainer"></div>
+    </body>
+</html>
