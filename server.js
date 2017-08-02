@@ -16,7 +16,6 @@ app.post('/register', urlencodedParser, (req, res) => {
         console.log(req.body)
     res.writeHead(200, {'Content-Type': 'application/json'});
     res.end(JSON.stringify(req.body));
-    // response.send(`${request.body.userName} - ${request.body.userAge}`)
 })
 
 app.listen(3000, function() {
