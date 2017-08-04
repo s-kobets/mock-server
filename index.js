@@ -48,14 +48,36 @@ document.addEventListener('DOMContentLoaded', () => {
         return false
     }
 
+    function validateEmail(value) {
+        const reg = /^([A-Za-z0-9_\-\.])+\@+(?:ya.ru|yandex.ru|yandex.ua|yandex.by|yandex.kz|yandex.com)$/
+        return reg.test(value)
+    }
+
+    function validatePhone(value) {
+        const reg = /^\+?\d.\s?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?[-.\s]?\d{2}[-.\s]?[-.\s]?\d{2}?$/
+        const valueArray = value.match(/[0-9]/gi)
+        let total = 0
+        valueArray.forEach(element => total += Number(element))
+        return total <= 30 && reg.test(value)
+    }
+
     function validate() {
         const data = MyForm.getData(elements)
         let isValid = true
         let errorFields = []
+        function error (key) {
+            isValid = false
+            errorFields.push(key)
+        }
         for (let key in data) {
             if (key === 'fio' && !validateFio(data[key])) {
-                isValid = false
-                errorFields.push(key)
+               error(key) 
+            }
+            if (key === 'email' && !validateEmail(data[key])) {
+               error(key) 
+            }
+            if (key === 'phone' && !validatePhone(data[key])) {
+               error(key) 
             }
         }
         return {
