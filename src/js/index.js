@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function request (xhr, body, target) {
-        const url = '/test/timeout'//form.getAttribute('action')
+        const url = form.getAttribute('action')
         xhr.open('POST', url, true)
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         xhr.send(body.substr(1))
