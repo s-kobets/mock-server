@@ -7,15 +7,24 @@
         .error {
             border: 1px solid red;
         }
+        .success {
+            border: 1px solid green;
+        }
+        .progress {
+            width: 20px;
+            height: 20px;
+            background: url('./src/image/loading.gif') no-repeat center center;
+            background-size: contain;
+        }
     </style>
     <body>
         <form action="/register" method="post" id="myForm">
             <label>ФИО</label><br>
-            <input type="text" name="fio"/><br><br>
+            <input type="text" name="fio" value="asd asd asd"/><br><br>
             <label>Почта</label><br>
-            <input type="email" name="email" value="sdfs" /><br><br>
+            <input type="email" name="email" value="sdfs@yandex.ru" /><br><br>
             <label>Телефон, формат ввода (+7(999)999-99-99)</label><br>
-            <input type="tel" name="phone" value="+7"/><br><br>
+            <input type="tel" name="phone" value="+7(111)222-22-22"/><br><br>
             <input id="submitButton" type="submit" value="Отправить" />
         </form>
 

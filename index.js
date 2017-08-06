@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function request(xhr, body, target) {
-        var url = form.getAttribute('action');
+        var url = '/test/timeout'; //form.getAttribute('action')
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.send(body.substr(1));
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         var xnrResult = JSON.parse(xhr.responseText);
                         if (xnrResult.status.includes('error')) {
                             result.classList.add('error');
-                            result.innerHTML(xnrResult.reason);
+                            result.innerHTML = xnrResult.reason;
                         } else if (xnrResult.status.includes('progress')) {
                             result.classList.add('progress');
                             setTimeout(request(xhr, bodyRequest, target), xnrResult.timeout);
@@ -203,45 +203,49 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 }, false);
 
-
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-const validateFio = (value) => {
-    const valueFio = value.split(' ')
-    for (let i = 0; i < valueFio.length; i += 1) {
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var validateFio = function validateFio(value) {
+    var valueFio = value.split(' ');
+    for (var i = 0; i < valueFio.length; i += 1) {
         if (valueFio[i].length === 0) {
-            return false
+            return false;
         }
         if (i === 2) {
-            return true
+            return true;
         }
     }
-    return false
-}
+    return false;
+};
 
-const validateEmail = (value) => {
-    const reg = /^([A-Za-z0-9_\-\.])+\@+(?:ya.ru|yandex.ru|yandex.ua|yandex.by|yandex.kz|yandex.com)$/
-    return reg.test(value)
-}
+var validateEmail = function validateEmail(value) {
+    var reg = /^([A-Za-z0-9_\-\.])+\@+(?:ya.ru|yandex.ru|yandex.ua|yandex.by|yandex.kz|yandex.com)$/;
+    return reg.test(value);
+};
 
-const validatePhone = (value) => {
-    const reg = /^\+?\d.\s?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?[-.\s]?\d{2}[-.\s]?[-.\s]?\d{2}?$/
-    const valueArray = value.match(/[0-9]/gi)
-    let total = 0
-    valueArray.forEach(element => total += Number(element))
-    return total <= 30 && reg.test(value)
-}
+var validatePhone = function validatePhone(value) {
+    var reg = /^\+?\d.\s?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?[-.\s]?\d{2}[-.\s]?[-.\s]?\d{2}?$/;
+    var valueArray = value.match(/[0-9]/gi);
+    var total = 0;
+    valueArray.forEach(function (element) {
+        return total += Number(element);
+    });
+    return total <= 30 && reg.test(value);
+};
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    validateFio,
-    validateEmail,
-    validatePhone
-});
-
+exports.default = {
+    validateFio: validateFio,
+    validateEmail: validateEmail,
+    validatePhone: validatePhone
+};
 
 /***/ })
 /******/ ]);

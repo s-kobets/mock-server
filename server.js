@@ -13,9 +13,24 @@ app.get('*', function(req, res) {
 
 app.post('/register', urlencodedParser, (req, res) => {
     if (!req.body) return res.sendStatus(400)
-    console.log(req.body)
     res.writeHead(200, {'Content-Type': 'application/json'});
     res.end(JSON.stringify({'status': 'success'}));
+})
+
+app.post('/error', urlencodedParser, (req, res) => {
+    if (!req.body) return res.sendStatus(400)
+    res.end(JSON.stringify({
+        'status': 'error',
+        'reason': 'Server error'
+    }));
+})
+
+app.post('/timeout', urlencodedParser, (req, res) => {
+    if (!req.body) return res.sendStatus(400)
+    res.end(JSON.stringify({
+        'status': 'progress',
+        'timeout': 1000
+    }));
 })
 
 app.listen(3000, function() {

@@ -1,4 +1,4 @@
-import methodsValidate from './src/js/methodsValidate'
+import methodsValidate from './methodsValidate'
 
 const MyForm = {
     validate: () => ({
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function request (xhr, body, target) {
-        const url = form.getAttribute('action')
+        const url = '/test/timeout'//form.getAttribute('action')
         xhr.open('POST', url, true)
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         xhr.send(body.substr(1))
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const xnrResult = JSON.parse(xhr.responseText)
                         if (xnrResult.status.includes('error')) {
                             result.classList.add('error')
-                            result.innerHTML(xnrResult.reason)
+                            result.innerHTML = xnrResult.reason
                         } else if (xnrResult.status.includes('progress')) {
                             result.classList.add('progress')
                             setTimeout(request(xhr, bodyRequest, target), xnrResult.timeout)
