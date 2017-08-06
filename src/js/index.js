@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         return
-    }    
+    }
 
     function validate() {
         const data = MyForm.getData(elements)
@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = e.target
         const validate = MyForm.validate()
         const {isValid} = validate
-        if (!isValid) {
-            setData(validate)
-        } else {
+
+        setData(validate)
+        if (isValid) {
             const xhr = new XMLHttpRequest()
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4) {
@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else {
                             result.classList.add('success')
                             result.innerHTML = 'Success'
+                            form.reset()
                         }
 
                     } else {

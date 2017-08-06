@@ -168,9 +168,9 @@ document.addEventListener('DOMContentLoaded', function () {
         var validate = MyForm.validate();
         var isValid = validate.isValid;
 
-        if (!isValid) {
-            setData(validate);
-        } else {
+
+        setData(validate);
+        if (isValid) {
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
@@ -186,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         } else {
                             result.classList.add('success');
                             result.innerHTML = 'Success';
+                            form.reset();
                         }
                     } else {
                         target.removeAttribute('disabled');
