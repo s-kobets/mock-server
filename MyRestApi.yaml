@@ -1,0 +1,122 @@
+swagger: "2.0"
+
+info:
+  version: "0.0.1"
+  title: WarehouseBot
+host: "bot"
+basePath: /api/v1
+tags:
+  - name: Auth
+    description: force login bot
+  - name: Trade
+    description: initiate trade in steam
+paths:
+  /api/v1/auth/:
+    post:
+      tags:
+        - Auth
+      summary: |
+        Create new session cookie
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/AuthCredentials'
+      produces:
+        - application/json
+      responses:
+        201:
+          description: OK
+          schema:
+            type: object
+            properties:
+              cookie:
+                type: string
+                description: cookie for authorized bot reauest
+        400:
+          description:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: "#/definitions/ClientError"
+
+  /api/v1/offers/:
+    post:
+      tags:
+        - Trade
+      summary: |
+        Create new trade offer
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/TradeOfferRequest'
+      produces:
+        - application/json
+      responses:
+        201:
+          description: OK
+          schema:
+            type: object
+            properties:
+              offer_id:
+                type: string
+                  
+        400:
+          description:
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  $ref: "#/definitions/ClientError"
+
+definitions:
+  AuthCredentials:
+    type: object
+    description: The necessary data for bot login
+    properties:
+      id:
+        type: string
+        description: Unique client identifier
+      password:
+        type: string
+        description: Bots password
+      shared_secret:
+        type: string
+        description: Secret code hacked from the rooted android app
+  TradeOfferRequest:
+    type: object
+    description: Products for initiate trade
+    properties:
+      client_id:
+        type: string
+        description: Unique steam id
+      products:
+        type: array
+        items:
+          type: string
+          description: Composite product id
+  Error:
+    type: object
+    properties:
+      message:
+        type: string
+        description: Your data is shit
+        example: Your data is shit
+      code:
+        type: string
+        example: "InvalidType"
+  ClientError:
+    allOf:
+    - $ref: '#/definitions/Error'
+    - type: object
+      properties:
+        field:
+          type: string

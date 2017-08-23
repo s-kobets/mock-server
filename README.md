@@ -1,5 +1,4 @@
-Тестовое задание yandex
-(Форма с валидацией)
+Mock-server
 
 #### Usage
 
@@ -7,8 +6,6 @@
 npm run start
 ```
 
-#### Build JS
+#### in Brouser
 
-```javascript
-npm run build_js
-```
+http://localhost:3000

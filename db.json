@@ -1,0 +1,208 @@
+{
+  "deposit": [
+    {
+      "id": 0,
+      "products": [
+        {
+          "id": 0,
+          "name": "M9 Bayonet | Doppler",
+          "condition": "Factory New",
+          "price": 316083
+        },
+        {
+          "id": 1,
+          "name": "Karambit | Stained",
+          "condition": "Field-Tested",
+          "price": 316083
+        },
+        {
+          "id": 2,
+          "name": "M9 Bayonet | Lore",
+          "condition": "Factory New",
+          "price": 1500000
+        },
+        {
+          "id": 3,
+          "name": "StatTrak™ AWP | Asiimov",
+          "condition": "Field-Tested",
+          "price": 121813
+        },
+        {
+          "id": 4,
+          "name": "StatTrak™ USP-S | Kill ",
+          "condition": "Field-Tested",
+          "price": 121813
+        },
+        {
+          "id": 5,
+          "name": "StatTrak™ AWP | Asiimov",
+          "condition": "Field-Tested",
+          "price": 121813
+        },
+        {
+          "id": 6,
+          "name": "M9 Bayonet | Doppler",
+          "condition": "Factory New",
+          "price": 316083
+        },
+        {
+          "id": 7,
+          "name": "Karambit | Stained",
+          "condition": "Field-Tested",
+          "price": 316083
+        },
+        {
+          "id": 8,
+          "name": "M9 Bayonet | Lore",
+          "condition": "Factory New",
+          "price": 1500000
+        },
+        {
+          "id": 9,
+          "name": "StatTrak™ AWP | Asiimov",
+          "condition": "Field-Tested",
+          "price": 121813
+        },
+        {
+          "id": 10,
+          "name": "StatTrak™ USP-S | Kill ",
+          "condition": "Field-Tested",
+          "price": 121813
+        },
+        {
+          "id": 11,
+          "name": "StatTrak™ AWP | Asiimov",
+          "condition": "Field-Tested",
+          "price": 121813
+        },
+        {
+          "id": 12,
+          "name": "M9 Bayonet | Doppler",
+          "condition": "Factory New",
+          "price": 316083
+        },
+        {
+          "id": 13,
+          "name": "Karambit | Stained",
+          "condition": "Field-Tested",
+          "price": 316083
+        },
+        {
+          "id": 14,
+          "name": "M9 Bayonet | Lore",
+          "condition": "Factory New",
+          "price": 1500000
+        },
+        {
+          "id": 15,
+          "name": "StatTrak™ AWP | Asiimov",
+          "condition": "Field-Tested",
+          "price": 121813
+        },
+        {
+          "id": 16,
+          "name": "StatTrak™ USP-S | Kill ",
+          "condition": "Field-Tested",
+          "price": 121813
+        },
+        {
+          "id": 17,
+          "name": "StatTrak™ AWP | Asiimov",
+          "condition": "Field-Tested",
+          "price": 121813
+        }
+      ],
+      "page": 1,
+      "total": 2
+    },
+    {
+      "products": [
+        {
+          "id": 18,
+          "name": "M9 Bayonet | Doppler",
+          "condition": "Factory New",
+          "price": "316083"
+        },
+        {
+          "id": 19,
+          "name": "Karambit | Stained",
+          "condition": "Field-Tested",
+          "price": "316083"
+        },
+        {
+          "id": 20,
+          "name": "M9 Bayonet | Lore",
+          "condition": "Factory New",
+          "price": "1500000"
+        },
+        {
+          "id": 21,
+          "name": "StatTrak™ AWP | Asiimov",
+          "condition": "Field-Tested",
+          "price": "121813"
+        },
+        {
+          "id": 22,
+          "name": "StatTrak™ USP-S | Kill ",
+          "condition": "Field-Tested",
+          "price": "121813"
+        },
+        {
+          "id": 23,
+          "name": "StatTrak™ AWP | Asiimov",
+          "condition": "Field-Tested",
+          "price": "121813"
+        },
+        {
+          "id": 24,
+          "name": "M9 Bayonet | Doppler",
+          "condition": "Factory New",
+          "price": "316083"
+        }
+      ],
+      "page": 2,
+      "total": 2
+    },
+    {
+      "id": 3,
+      "name": "StatTrak™ AWP | Asiimov",
+      "condition": "Field-Tested",
+      "price": 121813,
+      "withdraw": true
+    }
+  ],
+  "withdraw": [
+    {
+      "products": [
+        {
+          "id": 0,
+          "name": "M9 Bayonet | Doppler",
+          "condition": "Factory New",
+          "price": 316083
+        },
+        {
+          "id": 1,
+          "name": "Karambit | Stained",
+          "condition": "Field-Tested",
+          "price": 316083
+        },
+        {
+          "id": 2,
+          "name": "M9 Bayonet | Lore",
+          "condition": "Factory New",
+          "price": 1500000
+        }
+      ],
+      "total": 2132166
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
